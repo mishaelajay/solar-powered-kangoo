@@ -1,7 +1,44 @@
 <!doctype html>
-<title>Hello from Flask</title>
-{% if name %}
-  <h1>Hello {{ name }}!</h1>
-{% else %}
-  <h1>Hello, World!</h1>
-{% endif %}
+<title>SOLAR POWERED KANGOO</title>
+
+ <meta http-equiv="refresh" content="4" />
+
+{% extends "base.html" %}
+
+{% block content %}
+  <table id="data" class="table table-striped">
+     <h3>Latest State of Charge</h3>
+     <thead>
+      <tr>
+        <th>ID</th>
+        <th>SOC</th>
+        <th>Created_At</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{ results["battery"][0] }}</td>
+        <td>{{ results["battery"][1] }}</td>
+        <td>{{ results["battery"][2] }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <table id="data1" class="table table-striped">
+    <h3>Latest Total Solar Watt</h3>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>TSW</th>
+        <th>Created_At</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{ results["inverter"][0] }}</td>
+        <td>{{ results["inverter"][1] }}</td>
+        <td>{{ results["inverter"][2] }}</td>
+    </tr>
+    </tbody>
+  </table>
+{% endblock %}

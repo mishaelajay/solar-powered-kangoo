@@ -40,7 +40,7 @@ def insert_into_db(msg_value):
     try:
         with sqlite3.connect("solar_powered_kangoo.db") as con:
             cur = con.cursor()
-            cur.execute("INSERT INTO inverter_values(total_solar_watt) VALUES(?)", msg_value)
+            cur.execute("INSERT INTO inverter_values(total_solar_watt) VALUES(?)", (msg_value,))
             con.commit()
             msg = "Record successfully added"
     except:
