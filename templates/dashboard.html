@@ -1,10 +1,8 @@
 <!doctype html>
 <title>SOLAR POWERED KANGOO</title>
-
- <meta http-equiv="refresh" content="4" />
+<meta http-equiv="refresh" content="4" />
 
 {% extends "base.html" %}
-
 {% block content %}
   <table id="data" class="table table-striped">
      <h3>Latest State of Charge</h3>
@@ -38,6 +36,20 @@
         <td>{{ results["inverter"][0] }}</td>
         <td>{{ results["inverter"][1] }}</td>
         <td>{{ results["inverter"][2] }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <table id="data2" class="table table-striped">
+    <h3>Calculated OPTIMAL AMP</h3>
+    <thead>
+      <tr>
+        <th>AMP</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{ results["optimal_amp"] }}</td>
     </tr>
     </tbody>
   </table>
