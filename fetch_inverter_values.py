@@ -47,7 +47,6 @@ def insert_into_db(msg_value):
         con.rollback()
         msg = "error in insert operation"
     finally:
-        print(msg)
         con.close()
 
 
