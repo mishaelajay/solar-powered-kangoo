@@ -5,7 +5,6 @@ import pdb
 
 app = Flask(__name__)
 pause_amp = 2
-
 tsw_to_solar_power_mode_matrix = RangeKeyDict({
     # What about > 800 and less than 100?
     (701, 801): "HIGH",
@@ -36,7 +35,7 @@ soc_to_charging_pace_matrix = {
 
 charging_pace_to_optimal_amp_matrix = {
     "FAST": 15,
-    "NORMAL": 11,
+    "MEDIUM": 11,
     "SLOW": 6,
     "PAUSE": 2
 }
