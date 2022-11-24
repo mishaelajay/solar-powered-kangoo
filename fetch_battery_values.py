@@ -40,15 +40,12 @@ def on_message(client, userdata, msg):
 
 
 def insert_into_db(msg_value):
-    try:
-        with sqlite3.connect("solar_powered_kangoo.db") as con:
-            cur = con.cursor()
-            cur.execute("INSERT INTO battery_values(soc) VALUES(?)", msg_value)
-            con.commit()
-            msg = "Record successfully added"
-    except:
-        con.rollback()
-        msg = "error in insert operation"
+    with sqlite3.connect("solar_powered_kangoo.db") as con:
+        cur = con.cursor()
+        cur.execute("INSERT INTO battery_values(soc) VALUES(?)", msg_value)
+        con.commit()
+        msg = "Record successfully added"
+
 
 broker_address = "127.0.0.1:1883"
 client = mqtt.Client("paca")  # create new instance
