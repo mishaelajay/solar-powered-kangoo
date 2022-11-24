@@ -49,9 +49,6 @@ def insert_into_db(msg_value):
     except:
         con.rollback()
         msg = "error in insert operation"
-    finally:
-        print(msg)
-        con.close()
 
 broker_address = "127.0.0.1:1883"
 client = mqtt.Client("paca")  # create new instance
